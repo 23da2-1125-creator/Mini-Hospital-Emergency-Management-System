@@ -8,6 +8,10 @@ public class PatientBST {
         root = null;
         
     }
+
+    public boolean isEmpty() {
+        return root == null;
+    }
     
     
   //Insert operation
@@ -112,6 +116,7 @@ public class PatientBST {
             current.age = successor.age;
             current.contactNumber = successor.contactNumber;
             current.medicalCondition = successor.medicalCondition;
+            current.visitHistory = successor.visitHistory;
 
             current.right = deleteNode(current.right, successor.patientId);
         }
