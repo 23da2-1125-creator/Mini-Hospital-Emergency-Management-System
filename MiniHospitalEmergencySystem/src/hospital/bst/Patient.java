@@ -1,5 +1,7 @@
 package hospital.bst;
 
+import hospital.linkedlist.VisitHistory;
+
 public class Patient {
 
     int patientId;
@@ -7,6 +9,7 @@ public class Patient {
     int age;
     String contactNumber;
     String medicalCondition;
+    VisitHistory visitHistory;
 
     Patient left;
     Patient right;
@@ -19,9 +22,26 @@ public class Patient {
         this.age = age;
         this.contactNumber = contactNumber;
         this.medicalCondition = medicalCondition;
+        this.visitHistory = new VisitHistory();
 
         left = null;
         right = null;
+    }
+
+    public int getPatientId() {
+        return patientId;
+    }
+
+    public String getPatientName() {
+        return patientName;
+    }
+
+    public String getMedicalCondition() {
+        return medicalCondition;
+    }
+
+    public VisitHistory getVisitHistory() {
+        return visitHistory;
     }
 
     public void displayPatient() {
