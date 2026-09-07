@@ -26,7 +26,7 @@ public class EmergencyQueue {
             return;
         }
 
-        rear++;
+        rear = (rear + 1) % queue.length;
 
         queue[rear] = patient;
 
@@ -45,7 +45,9 @@ public class EmergencyQueue {
 
         Patient temp = queue[front];
 
-        front++;
+        queue[front] = null;
+
+        front = (front + 1) % queue.length;
 
         count--;
 
@@ -69,7 +71,7 @@ public class EmergencyQueue {
 
             queue[index].displayPatient();
 
-            index++;
+            index = (index + 1) % queue.length;
         }
     }
 }
